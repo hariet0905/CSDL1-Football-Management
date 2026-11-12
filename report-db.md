@@ -10,7 +10,9 @@ CSDL quản lý hồ sơ, hợp đồng, đăng ký, trận đấu, lần ra sâ
 
 ## 15 truy vấn mẫu
 
-`db/05_reports.sql` đã lưu sẵn 15 câu `SELECT`. Ứng dụng đọc marker `Q01`–`Q15` để hiển thị ở tab Báo cáo.
+`db/05_reports.sql` chứa 15 câu `SELECT` phục vụ ứng dụng, không phải file tạm sinh ra để kiểm thử. Ứng dụng đọc marker `Q01`–`Q15` để hiển thị ở tab Báo cáo.
+
+File SQL nằm trong repo; dữ liệu nguồn nằm trong 11 bảng MySQL. Các truy vấn chưa được lưu thành view hoặc thủ tục trong DB. Chạy file sẽ tính và trả kết quả từ dữ liệu hiện có; không tạo bảng báo cáo, không thêm/sửa bản ghi. Có thể chạy trực tiếp trong MySQL mà không cần mở web hay có token API.
 
 | Query | Nội dung |
 | --- | --- |
@@ -55,7 +57,7 @@ Seed hiện có đủ dữ liệu để minh họa các nhóm đăng ký, trận
 ## Tài liệu và cách chạy
 
 - Schema, trigger, procedure, seed, báo cáo: `db/01_schema.sql` đến `db/05_reports.sql`.
-- Báo cáo tổng hợp: [Report.md](resources/reports/Report.md).
+- Cài đặt, cấu hình và chạy từ máy mới: [README.md](README.md).
 
 Trong Workbench có thể chạy:
 
@@ -66,4 +68,6 @@ SET @club_id=(SELECT id FROM CauLacBo WHERE la_clb_quan_ly=TRUE);
 SET @as_of=DATE('2026-05-24');
 ```
 
-Sau đó chạy các phần `Q01`–`Q15` trong `db/05_reports.sql`. Với DB cũ, dùng `app/update-db.bat --check` để kiểm tra trước; không chạy lại `submission.sql`, `01_schema.sql` hoặc `04_seed.sql` trên CSDL đang có dữ liệu.
+Sau đó chỉ chạy phần `Q01`–`Q15` cần xem trong cùng kết nối. Chạy lại toàn file sẽ đặt lại tham số về mùa/ngày minh họa ở đầu file. Truy vấn SQL chỉ đọc dữ liệu đã lưu trong DB, không đọc cache BXH hoặc ESPN của Java.
+
+Với DB cũ, dùng `app/update-db.bat --check` để kiểm tra trước; không chạy lại `submission.sql`, `01_schema.sql` hoặc `04_seed.sql` trên CSDL đang có dữ liệu.
