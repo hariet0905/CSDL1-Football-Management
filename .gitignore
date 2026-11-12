@@ -1,0 +1,11 @@
+.DS_Store
+*.class
+.env
+.env.*
+!.env.example
+!.env.sample
+*.log
+/app/build/
+/app/.football-data-bindings.properties*
+/app/.admin.properties*
+/resources/local-backups/

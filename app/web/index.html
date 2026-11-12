@@ -1,0 +1,31 @@
+<!doctype html>
+<html lang="vi">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Manchester United · Quản lý CLB</title>
+  <link rel="stylesheet" href="/style.css"><script src="/player-photos.js" defer></script><script src="/football-assets.js" defer></script><script src="/dashboard.js" defer></script><script src="/player-detail.js" defer></script><script src="/motion.js" defer></script><script src="/standings.js" defer></script><script src="/details.js" defer></script><script src="/app.js" defer></script>
+</head>
+<body class="signed-out">
+  <section id="login-screen" class="login-screen" aria-labelledby="login-title">
+    <div class="login-art" aria-hidden="true"><img src="/club-logo.png" alt=""><span>CLUB MANAGEMENT</span><strong>Manchester United</strong></div>
+    <form id="login-form" class="login-card"><img class="login-crest" src="/club-logo.png" alt="Manchester United"><p class="eyebrow">CLUB MANAGEMENT</p><h1 id="login-title">Đăng nhập</h1><label>Tên đăng nhập<input name="username" id="login-username" autocomplete="username" maxlength="40" required></label><label>Mật khẩu<span class="password-field"><input name="password" id="login-password" type="password" autocomplete="current-password" maxlength="256" required><button type="button" id="toggle-password" aria-label="Hiện mật khẩu" aria-pressed="false">Hiện</button></span></label><p id="login-error" class="form-error" role="alert" hidden></p><button type="submit" id="login-submit" class="primary">Đăng nhập</button></form>
+  </section>
+  <a class="skip" href="#content">Đến nội dung</a>
+  <aside class="sidebar">
+    <a href="#overview" class="brand" aria-label="Trang tổng quan"><img src="/club-logo.png" alt="Logo Manchester United" width="54" height="54"><span>Manchester United<small>CLUB MANAGEMENT</small></span></a>
+    <div class="nav-label">QUẢN LÝ ĐỘI BÓNG</div>
+    <nav aria-label="Điều hướng chính" id="navigation"></nav>
+    <div class="sidebar-bottom"><span id="admin-name"></span><button type="button" class="text-button" id="logout">Đăng xuất</button></div>
+  </aside>
+  <div class="workspace">
+    <header class="topbar"><span>PREMIER LEAGUE <span class="divider">/</span> <strong>CLB Manchester United</strong></span><span class="demo-tag">MÙA 2026–2027</span></header>
+    <main id="content" tabindex="-1">
+      <div class="page-heading"><div><p class="eyebrow" id="eyebrow">MANCHESTER UNITED / 2026–2027</p><h1 id="page-title">Tổng quan câu lạc bộ</h1></div><button class="primary" data-action="onboard"><svg class="icon" aria-hidden="true"><use href="/icons.svg#add-outline"></use></svg>Tiếp nhận cầu thủ</button></div>
+      <form id="context" class="context"><label>Mùa giải<select name="season" id="season"><option value="2026">2026–2027</option></select></label><label>Ngày báo cáo<input name="date" id="as-of" type="date" required></label><button type="submit" class="secondary"><svg class="icon" aria-hidden="true"><use href="/icons.svg#checkmark-outline"></use></svg>Áp dụng</button><span id="connection" role="status">Đang kết nối…</span></form>
+      <div id="page" aria-live="polite"><div class="empty">Đang tải dữ liệu câu lạc bộ…</div></div>
+    </main>
+  </div>
+  <dialog id="modal" aria-labelledby="modal-title"><form id="editor"><div class="modal-heading"><div><p class="eyebrow">QUẢN LÝ CÂU LẠC BỘ</p><h2 id="modal-title"></h2></div><button type="button" class="icon-button" id="close-modal" aria-label="Đóng biểu mẫu"><svg class="icon" aria-hidden="true"><use href="/icons.svg#close-outline"></use></svg></button></div><div class="modal-body"><p id="form-note" class="muted"></p><div id="fields" class="form-grid"></div><p id="form-error" class="form-error" role="alert" hidden></p></div><div class="modal-footer"><button type="button" id="cancel" class="secondary">Hủy</button><button type="submit" id="save" class="primary"><svg class="icon" aria-hidden="true"><use href="/icons.svg#checkmark-outline"></use></svg>Lưu dữ liệu</button></div></form></dialog>
+  <div id="toast" role="status" hidden></div>
+</body>
+</html>
