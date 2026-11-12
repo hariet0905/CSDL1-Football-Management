@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="164" height="26" viewBox="0 0 164 26" role="img" aria-label="Báo cáo: 15 truy vấn">
+  <title>Báo cáo: 15 truy vấn</title>
+  <rect width="164" height="26" fill="#252525"/>
+  <rect x="68" width="96" height="26" fill="#D6A64B"/>
+  <g font-family="Verdana,DejaVu Sans,sans-serif" font-size="11" text-anchor="middle">
+    <text x="34" y="17" fill="#FFFFFF">Báo cáo</text>
+    <text x="116" y="17" fill="#1A1A1A">15 truy vấn</text>
+  </g>
+</svg>
